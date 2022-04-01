@@ -54,8 +54,12 @@ const Edit = (props) => {
                     <input type='text' name='description' value={item.description} onChange={handleChange}/>
                     <br />
                     <br />
-                    <label htmlFor='image'>Image URL:</label>
-                    <input type='text' name='image' value={item.image} onChange={handleChange} />
+                    <label htmlFor='primary_image'>Image URL (Primary):</label>
+                    <input type='text' name='primary_image' value={item.primary_image} onChange={handleChange} />
+                    <br />
+                    <br />
+                    <label htmlFor='secondary_image'>Image URL (Secondary):</label>
+                    <input type='text' name='secondary_image' value={item.secondary_image} onChange={handleChange} />
                     <br />
                     <br />
                     <label htmlFor='price'>Price:</label>

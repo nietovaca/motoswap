@@ -2,6 +2,7 @@ import './App.css';
 import { useState } from 'react'
 import { useQuery } from 'react-query'
 import axios from 'axios'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 //Components
 import Item from './Item/Item';
@@ -16,7 +17,6 @@ import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 
 //Styles 
 import { Wrapper, StyledButton } from './App.styles';
-import { NumberLiteralType } from 'typescript';
 
 //Types 
 export type CartItemType = {
@@ -118,52 +118,59 @@ const App = () => {
   //Delete route returns 405, something isn't working properly with the event.target.value to delete by id
 
   return (
-    <Wrapper className="App">
-      <Drawer anchor='right' open={cartOpen} onClose={() => setCartOpen(false)}>
-        <Cart 
-          cartItems={cartItems} 
-          addToCart={handleAddToCart} 
-          removeFromCart={handleRemoveFromCart} />
-      </Drawer>  
-      <StyledButton onClick={() => setCartOpen(true)}>
-        <Badge badgeContent={getTotalItems(cartItems)} color='error'>
-          <AddShoppingCartIcon />
-        </Badge>
-      </StyledButton>
-      <Grid container spacing={3}>
-        {data?.map(item => (
-          <Grid item key={item.id} xs={12} sm={4}>
-            <Item item={item} handleAddToCart={handleAddToCart}/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <Edit handleUpdate={handleUpdate} id={item.id} getProducts={getProducts} />
-          </Grid>
-        ))}
-      </Grid>
-      <Grid container spacing={2}>
-        <Grid item sm={3}>
-          <Add handleCreate={handleCreate} />
-        </Grid>
-      </Grid>
-    </Wrapper>
+    <Router>
+      <Switch>
+        <Route path='/shop'>
+          <Wrapper className="App">
+            <h1>Shop:</h1>
+            <Drawer anchor='right' open={cartOpen} onClose={() => setCartOpen(false)}>
+              <Cart 
+                cartItems={cartItems} 
+                addToCart={handleAddToCart} 
+                removeFromCart={handleRemoveFromCart} />
+            </Drawer>  
+            <StyledButton onClick={() => setCartOpen(true)}>
+              <Badge badgeContent={getTotalItems(cartItems)} color='error'>
+                <AddShoppingCartIcon />
+              </Badge>
+            </StyledButton>
+            <Grid container spacing={3}>
+                {data?.map(item => (
+                  <Grid item key={item.id} xs={12} sm={4}>
+                    <Item item={item} handleAddToCart={handleAddToCart}/>
+                  </Grid>
+              ))}
+              </Grid>      
+            </Wrapper>
+        </Route>
+        <Route path='/admin_edit'>
+          <Wrapper>
+            <h1>Shop Admin:</h1>
+            <Grid container spacing={3}>
+              {data?.map(item => (
+                <Grid item key={item.id} xs={12} sm={4}>
+                  <h2>Edit Products:</h2>
+                  <Edit handleUpdate={handleUpdate} id={item.id} getProducts={getProducts} />
+                </Grid>
+              ))}
+            </Grid>
+          </Wrapper>
+        </Route>
+        <Route path='/admin_add'>
+          <Wrapper>
+            <Grid container spacing={2}>
+              <Grid item sm={3}>
+                <h2>Add Products:</h2>
+                <Add handleCreate={handleCreate} />
+              </Grid>
+            </Grid>
+          </Wrapper>
+        </Route>
+        <Route path='/'>
+            <h1>Landing Page</h1>
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 

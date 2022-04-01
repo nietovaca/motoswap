@@ -43,8 +43,12 @@ const Add = (props) => {
                 <input type='text' name='description' value={product.description} onChange={handleChange}/>
                 <br />
                 <br />
-                <label htmlFor='image'>Image URL:</label>
-                <input type='text' name='image' value={product.image} onChange={handleChange} />
+                <label htmlFor='primary_image'>Image URL:</label>
+                <input type='text' name='primary_image' value={product.primary_image} onChange={handleChange} />
+                <br />
+                <br />
+                <label htmlFor='secondary_image'>Image URL:</label>
+                <input type='text' name='secondary_image' value={product.secondary_image} onChange={handleChange} />
                 <br />
                 <br />
                 <label htmlFor='price'>Price:</label>
