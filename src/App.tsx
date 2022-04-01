@@ -7,6 +7,7 @@ import axios from 'axios'
 import Item from './Item/Item';
 import Cart from './Cart/Cart'
 import Add from './CrudComponents/AddProduct'
+import Edit from './CrudComponents/EditProduct'
 import Drawer from '@mui/material/Drawer';
 import LinearProgress from '@mui/material/LinearProgress';
 import Grid from '@mui/material/Grid';
@@ -15,6 +16,7 @@ import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 
 //Styles 
 import { Wrapper, StyledButton } from './App.styles';
+import { NumberLiteralType } from 'typescript';
 
 //Types 
 export type CartItemType = {
@@ -93,12 +95,20 @@ const App = () => {
       }).catch((error) => {
         if(error.response){
           console.log(error.response.data);
-          
         }
       })
   }
+  
+  const handleUpdate = (editProduct: any) => {
+    console.log(editProduct)
+    axios
+      .put('https://backcap.herokuapp.com/api/products/' + editProduct.id, editProduct)
+      .then((response) => {
+        getProducts()
+      })
+  }
 
-  // const handleDelete = (event: any) => {
+  // const handleDelete = (event:any, id:number) => {
   //   axios
   //     .delete('https://backcap.herokuapp.com/api/products' + event.target.value)
   //     .then((response) => {
@@ -124,6 +134,27 @@ const App = () => {
         {data?.map(item => (
           <Grid item key={item.id} xs={12} sm={4}>
             <Item item={item} handleAddToCart={handleAddToCart}/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <Edit handleUpdate={handleUpdate} id={item.id} getProducts={getProducts} />
           </Grid>
         ))}
       </Grid>

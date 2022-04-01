@@ -2,12 +2,13 @@ import React, { useState } from 'react'
 
 const Add = (props) => {
     let emptyProduct = {
+        id: Number,
         category: 'New' ||'Used'||'Riding gear'||'Casual wear'||'Luggage',
         title: '', 
         description: '', 
         image: '', 
-        price: 1, 
-        amount: 1 
+        price: Number, 
+        amount: Number, 
     }
     const [product, setProduct] = useState(emptyProduct);
 
