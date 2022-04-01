@@ -40,7 +40,7 @@ const App = () => {
   await (await fetch('https://backcap.herokuapp.com/api/products')).json();  
 
   const { data, isLoading, error } = useQuery<CartItemType[]>(
-    // useQuery, 
+    // useQuery to load from API 
     'products',
     getProducts
     );
@@ -98,13 +98,14 @@ const App = () => {
       })
   }
 
-  // const handleDelete = (event:any) => {
+  // const handleDelete = (event: any) => {
   //   axios
-  //     .delete('http://backcap.herokuapp.com/api/products' + event.target.value)
+  //     .delete('https://backcap.herokuapp.com/api/products' + event.target.value)
   //     .then((response) => {
   //       getProducts()
   //     })
   // }
+  //Delete route returns 405, something isn't working properly with the event.target.value to delete by id
 
   return (
     <Wrapper className="App">
@@ -122,7 +123,7 @@ const App = () => {
       <Grid container spacing={3}>
         {data?.map(item => (
           <Grid item key={item.id} xs={12} sm={4}>
-            <Item item={item} handleAddToCart={handleAddToCart} />
+            <Item item={item} handleAddToCart={handleAddToCart}/>
           </Grid>
         ))}
       </Grid>
@@ -136,18 +137,3 @@ const App = () => {
 }
 
 export default App;
-
-// let [products, setProducts] = useState([{}])
-
-  // const getProducts = () => {
-  //   axios
-  //     .get('http://backcap.herokuapp.com/api/products')
-  //     .then(
-  //       (response) => setProducts(response.data),
-  //       (err) => console.log(err)
-  //     )
-  //     .catch((error) => console.error(error))
-  // }
-    // useEffect(() => {
-  //   getProducts()
-  // }, [])
