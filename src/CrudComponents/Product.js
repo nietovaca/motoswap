@@ -17,6 +17,7 @@ const Product = (props) => {
     return (
     <div>
         <img src={product.primary_image} alt={product.title}/>
+        {product.secondary_image? <img src={product.secondary_image} alt={product.title}/>: null}
         <div>
             <h3>{product.title}</h3>
             <p>{product.description}</p>

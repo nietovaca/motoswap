@@ -1,5 +1,5 @@
 import Button from '@mui/material/Button';
-
+import Product from '../CrudComponents/Product'
 // Types 
 import { CartItemType} from '../App';
 //Styles 
@@ -12,8 +12,7 @@ type Props = {
 
 const Item: React.FC<Props> = ({ item, handleAddToCart }) => (
     <Wrapper>
-        {item.primary_image? <img src={item.primary_image}  alt= {item.title}/> : <img src={''}  alt= {'stock image'}/>
-        }
+        <img src={item.primary_image}  alt= {item.title}/>
         <div>
             <h3>{item.title}</h3>
             <p>{item.description}</p>
