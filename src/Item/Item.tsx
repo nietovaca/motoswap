@@ -12,7 +12,8 @@ type Props = {
 
 const Item: React.FC<Props> = ({ item, handleAddToCart }) => (
     <Wrapper>
-        <img src={item.image} alt={item.title}/>
+        {item.primary_image? <img src={item.primary_image}  alt= {item.title}/> : <img src={''}  alt= {'stock image'}/>
+        }
         <div>
             <h3>{item.title}</h3>
             <p>{item.description}</p>

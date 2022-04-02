@@ -24,7 +24,8 @@ export type CartItemType = {
   category: number; 
   title: string; 
   description: string; 
-  image: string; 
+  primary_image: string;
+  secondary_image: string; 
   price: number; 
   in_stock: boolean; 
   amount: number;
@@ -143,7 +144,8 @@ const App = () => {
               </Grid>      
             </Wrapper>
         </Route>
-        <Route path='/admin_edit'>
+
+        <Route path='/edit'>
           <Wrapper>
             <h1>Shop Admin:</h1>
             <Grid container spacing={3}>
@@ -156,7 +158,8 @@ const App = () => {
             </Grid>
           </Wrapper>
         </Route>
-        <Route path='/admin_add'>
+
+        <Route path='/add'>
           <Wrapper>
             <Grid container spacing={2}>
               <Grid item sm={3}>
@@ -166,6 +169,7 @@ const App = () => {
             </Grid>
           </Wrapper>
         </Route>
+
         <Route path='/'>
             <h1>Landing Page</h1>
         </Route>

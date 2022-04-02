@@ -7,7 +7,8 @@ const Edit = (props) => {
         category: 'New' ||'Used'||'Riding gear'||'Casual wear'||'Luggage',
         title: '', 
         description: '', 
-        image: '', 
+        primary_image: '', 
+        secondary_image: '',
         price: 0, 
         amount: 1, 
         id: props.id

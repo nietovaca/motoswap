@@ -6,7 +6,8 @@ const Add = (props) => {
         category: 'New' ||'Used'||'Riding gear'||'Casual wear'||'Luggage',
         title: '', 
         description: '', 
-        image: '', 
+        primary_image: '',
+        secondary_image: '', 
         price: Number, 
         amount: Number, 
     }
