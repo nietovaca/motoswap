@@ -109,15 +109,6 @@ const App = () => {
       })
   }
 
-  // const handleDelete = (event:any, id:number) => {
-  //   axios
-  //     .delete('https://backcap.herokuapp.com/api/products' + event.target.value)
-  //     .then((response) => {
-  //       getProducts()
-  //     })
-  // }
-  //Delete route returns 405, something isn't working properly with the event.target.value to delete by id
-
   return (
     <Router>
       <Switch>
