@@ -5,6 +5,7 @@ import axios from 'axios'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 //Components
+import Nav from './NavBar/Nav'
 import Item from './Item/Item';
 import Cart from './Cart/Cart'
 import Add from './CrudComponents/AddProduct'
@@ -111,6 +112,7 @@ const App = () => {
 
   return (
     <Router>
+      <Nav />
       <Switch>
         <Route path='/shop'>
           <Wrapper className="App">
