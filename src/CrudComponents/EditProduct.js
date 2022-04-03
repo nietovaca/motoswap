@@ -3,7 +3,7 @@ import axios from 'axios'
 
 
 const Edit = (props) => {
-    let emptyProduct = {
+    let emptyItem = {
         category: 'New' ||'Used'||'Riding gear'||'Casual wear'||'Luggage',
         title: '', 
         description: '', 
@@ -13,7 +13,7 @@ const Edit = (props) => {
         amount: 1, 
         id: props.id
     }
-    const [item, setProduct] = useState(emptyProduct);
+    const [item, setProduct] = useState(emptyItem);
 
     const handleChange = (event) => {
         setProduct({ ...item, [event.target.name]: event.target.value })
@@ -35,10 +35,10 @@ const Edit = (props) => {
     return (
         <>
             <details>
-                <summary>Edit Product</summary>
+                <summary>{item.title}</summary>
                 <form onSubmit={handleSubmit}>
                     <label htmlFor='title'>Name:</label>
-                    <input type='text' name='title' value={item.title} onChange={handleChange}/>
+                    <input type='text' name='title' defaultValue={item.title} onChange={handleChange}/>
                     <br />
                     <br />
                     <label>Category:</label>
@@ -52,23 +52,23 @@ const Edit = (props) => {
                     <br />
                     <br />
                     <label htmlFor='description'>Description:</label>
-                    <input type='text' name='description' value={item.description} onChange={handleChange}/>
+                    <input type='text' name='description' defaultValue={item.description} onChange={handleChange}/>
                     <br />
                     <br />
                     <label htmlFor='primary_image'>Image URL (Primary):</label>
-                    <input type='text' name='primary_image' value={item.primary_image} onChange={handleChange} />
+                    <input type='text' name='primary_image' defaultValue={item.primary_image} onChange={handleChange} />
                     <br />
                     <br />
                     <label htmlFor='secondary_image'>Image URL (Secondary):</label>
-                    <input type='text' name='secondary_image' value={item.secondary_image} onChange={handleChange} />
+                    <input type='text' name='secondary_image' defaultValue={item.secondary_image} onChange={handleChange} />
                     <br />
                     <br />
                     <label htmlFor='price'>Price:</label>
-                    <input type='text' pattern="[0-9]*" name='price' value={item.price} onChange={handleChange} />
+                    <input type='text' pattern="[0-9]*" name='price' defaultValue={item.price} onChange={handleChange} />
                     <br />
                     <br />
                     <label htmlFor='amount'>Quantity in Stock:</label>
-                    <input type='text' pattern="[0-9]*" name='amount' value={item.amount} onChange={handleChange}/>
+                    <input type='text' pattern="[0-9]*" name='amount' defaultValue={item.amount} onChange={handleChange}/>
                     <br />
                     <br />
                     <input type='submit' />

@@ -141,11 +141,11 @@ const App = () => {
         <Route path='/edit'>
           <Wrapper>
             <h1>Shop Admin:</h1>
+            <h2>Edit Products:</h2>
             <Grid container spacing={3}>
               {data?.map(item => (
                 <Grid item key={item.id} xs={12} sm={4}>
-                  <h2>Edit Products:</h2>
-                  <Edit handleUpdate={handleUpdate} id={item.id} getProducts={getProducts} />
+                  <Edit handleUpdate={handleUpdate} id={item.id} item={item} getProducts={getProducts} />
                 </Grid>
               ))}
             </Grid>
