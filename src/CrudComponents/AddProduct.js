@@ -1,28 +1,28 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 
 const Add = (props) => {
     let emptyProduct = {
-        id: Number,
         category: 'New' ||'Used'||'Riding gear'||'Casual wear'||'Luggage',
         title: '', 
         description: '', 
-        primary_image: '',
-        secondary_image: '', 
-        price: Number, 
-        amount: Number, 
+        imgURL: '', 
+        price: 1.99, 
+        amount: 1, 
     }
     const [product, setProduct] = useState(emptyProduct);
 
     const handleChange = (event) => {
-        setProduct({ ...product, [event.target.name]: event.target.value })
-    };
+        setProduct({ ...product, [event.target.name]: event.target.value })}
+        console.log(product)
 
     const handleSubmit = (event) => {
-        console.log(event);
         event.preventDefault()
         props.handleCreate(product)
+     
     }
-
+    
+    console.log(product)
+    
     return (
         <>
             <form onSubmit={handleSubmit}>
@@ -44,20 +44,16 @@ const Add = (props) => {
                 <input type='text' name='description' value={product.description} onChange={handleChange}/>
                 <br />
                 <br />
-                <label htmlFor='primary_image'>Image URL:</label>
-                <input type='text' name='primary_image' value={product.primary_image} onChange={handleChange} />
-                <br />
-                <br />
-                <label htmlFor='secondary_image'>Image URL:</label>
-                <input type='text' name='secondary_image' value={product.secondary_image} onChange={handleChange} />
+                <label htmlFor='imgURL'>Image URL:</label>
+                <input type='text' name='imgURL' value={product.imgURL} onChange={handleChange} />
                 <br />
                 <br />
                 <label htmlFor='price'>Price:</label>
-                <input type='text' pattern="[0-9]*" name='price' value={product.price} onChange={handleChange} />
+                <input type='number' name='price' value={product.price} onChange={handleChange} />
                 <br />
                 <br />
                 <label htmlFor='amount'>Quantity in Stock:</label>
-                <input type='text' pattern="[0-9]*" name='amount' value={product.amount} onChange={handleChange}/>
+                <input type='number' name='amount' value={product.amount} onChange={handleChange}/>
                 <br />
                 <br />
                 <input type='submit' />
@@ -77,3 +73,11 @@ export default Add;
 //                     <option value='new'>New</option>
 //                     <option value='used'>Used</option>
 //                 </select>     */}
+// <label htmlFor='primary_image'>Image URL:</label>
+{/* <input type='text' name='primary_image' value={product.primary_image} onChange={handleChange} />
+<br />
+<br />
+<label htmlFor='secondary_image'>Image URL:</label>
+<input type='text' name='secondary_image' value={product.secondary_image} onChange={handleChange} />
+<br />
+<br /> */}

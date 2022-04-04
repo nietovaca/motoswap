@@ -18,6 +18,7 @@ import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 
 //Styles 
 import { Wrapper, StyledButton } from './App.styles';
+import CartItem from './CartItem/CartItem';
 
 //Types 
 export type CartItemType = {
@@ -27,6 +28,7 @@ export type CartItemType = {
   description: string; 
   primary_image: string;
   secondary_image: string; 
+  imgURL: string; 
   price: number; 
   in_stock: boolean; 
   amount: number;
@@ -87,9 +89,15 @@ const App = () => {
     if (error) return <div>'Something went wrong ...'</div>
   
   const handleCreate = (addProduct: any) => {
-    console.log(addProduct)
     axios
-      .post('https://backcap.herokuapp.com/api/products', addProduct)
+      .post('https://backcap.herokuapp.com/api/products', addProduct, 
+      // {
+      //   headers: {
+      //     'content-type': 'multipart/form-data',
+      //     'X-CSRFTOKEN': 'CSRF_TOKEN'
+      //   }
+      // }
+      )
       .then((response) => {
         console.log(response)
         getProducts()
@@ -114,6 +122,7 @@ const App = () => {
     <Router>
       <Nav />
       <Switch>
+
         <Route path='/shop'>
           <Wrapper className="App">
             <h1>Shop:</h1>

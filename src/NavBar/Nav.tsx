@@ -4,7 +4,6 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Container from '@mui/material/Container';
 
-
 const Nav = () => {
   return (
     <AppBar position="static">
@@ -14,9 +13,9 @@ const Nav = () => {
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
               <Box sx={{ my: 2, color: 'black', display: 'block' }}
               >
-              <button><Link to='/shop'>Shop</Link></button>
-              <button><Link to='/add'>Swap</Link></button>
-              <button><Link to='/'>Home</Link></button>
+              <Link to='/shop' className='navlink'>Shop</Link>
+              <Link to='/add' className='navlink'>Swap</Link>
+              <Link to='/' className='navlink'>Home</Link>
             </Box>
           </Box>
         </Toolbar>

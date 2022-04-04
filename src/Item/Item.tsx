@@ -25,14 +25,15 @@ const Item: React.FC<Props> = ({ item, handleAddToCart }) => {
         setOpen(true);
       };
     
-      const handleClose = () => {
-        setOpen(false);
-      };
-    
+    const handleClose = () => {
+    setOpen(false);
+    };
+
     return (
         <>
         <Wrapper>
-            <img src={item.primary_image}  alt= {item.title}/>
+            {item.primary_image?  <img src={item.primary_image}  alt= {item.title}/>
+            :  <img src={item.imgURL}  alt= {item.title}/>}
             <div>
                 <h3>{item.title}</h3>
                 <h3>${item.price}</h3>
@@ -44,13 +45,15 @@ const Item: React.FC<Props> = ({ item, handleAddToCart }) => {
                 </Button>
                 <Dialog open={open} onClose={handleClose}>
                     <DialogTitle>{item.title} <br/> ${item.price}</DialogTitle>
-                    <DialogContent>
-                    <DialogContentText>
-                        {item.description}
-                    </DialogContentText>
-                    <DialogContentText>
-                        {item.amount} left in stock
-                    </DialogContentText>
+                    <DialogContent>   
+                        <DialogContentText>
+                        </DialogContentText>
+                        <DialogContentText>
+                            {item.description}
+                        </DialogContentText>
+                        <DialogContentText>
+                            {item.amount} left in stock
+                        </DialogContentText>
                     </DialogContent>
                     <DialogActions>
                     <Button onClick={()=>handleAddToCart(item)}><AddShoppingCartIcon/></Button>
@@ -64,3 +67,11 @@ const Item: React.FC<Props> = ({ item, handleAddToCart }) => {
         </>
 )};
 export default Item;
+
+
+// {
+//     if (item.primary_image) {<img src='item.primary_image' />
+//         if (item.secondary_image) {<img src='item.secondary_image' alt='item.title' />}
+//     } else if (item.imgURL) {<img src='item.imgURL' alt='item.title'/>
+//     } else {<img src='./img/motogirl.png' alt='Default Image'/>}
+//     }

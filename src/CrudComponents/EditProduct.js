@@ -9,7 +9,8 @@ const Edit = (props) => {
         description: '', 
         primary_image: '', 
         secondary_image: '',
-        price: 0, 
+        imgURL: '', 
+        price: 1.99, 
         amount: 1, 
         id: props.id
     }
