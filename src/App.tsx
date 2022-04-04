@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 //Components
 import Nav from './NavBar/Nav'
+import Landing from './Landing/Landing'
 import Item from './Item/Item';
 import Cart from './Cart/Cart'
 import Add from './CrudComponents/AddProduct'
@@ -117,10 +118,10 @@ const App = () => {
 
   return (
     <Router>
-      <Nav />
       <Switch>
 
         <Route path='/shop'>
+        <Nav />
           <Wrapper className="App">
             <h1>Shop:</h1>
             <Drawer anchor='right' open={cartOpen} onClose={() => setCartOpen(false)}>
@@ -145,6 +146,7 @@ const App = () => {
         </Route>
 
         <Route path='/edit'>
+        <Nav />
           <Wrapper>
             <h1>Shop Admin:</h1>
             <h2>Edit Products:</h2>
@@ -159,6 +161,7 @@ const App = () => {
         </Route>
 
         <Route path='/add'>
+        <Nav />
           <Wrapper>
             <Grid container spacing={2}>
               <Grid item sm={3}>
@@ -170,7 +173,7 @@ const App = () => {
         </Route>
 
         <Route path='/'>
-            <h1>Landing Page</h1>
+            <Landing />
         </Route>
       </Switch>
     </Router>
