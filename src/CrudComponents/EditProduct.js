@@ -7,8 +7,10 @@ const Edit = (props) => {
         category: 'New' ||'Used'||'Riding gear'||'Casual wear'||'Luggage',
         title: '', 
         description: '', 
+        primary_image: null,
+        secondary_image: null,
         imgURL: '', 
-        price: 1.99, 
+        price: 1, 
         amount: 1, 
         id: props.id
     }
@@ -37,7 +39,7 @@ const Edit = (props) => {
                 <summary>{item.title}</summary>
                 <form onSubmit={handleSubmit}>
                     <label htmlFor='title'>Name:</label>
-                    <input type='text' name='title' defaultValue={item.title} onChange={handleChange}/>
+                    <input type='text' name='title' value={item.title} onChange={handleChange}/>
                     <br />
                     <br />
                     <label>Category:</label>
@@ -55,7 +57,7 @@ const Edit = (props) => {
                     <br />
                     <br />
                     <label htmlFor='price'>Price:</label>
-                    <input type='text' pattern="[0-9]*" name='price' defaultValue={item.price} onChange={handleChange} />
+                    <input type='number' name='price' defaultValue={item.price} placeholder={item.price} onChange={handleChange} />
                     <br />
                     <br />
                     <label htmlFor='amount'>Quantity in Stock:</label>

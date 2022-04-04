@@ -50,7 +50,6 @@ const App = () => {
     'products',
     getProducts
     );
-    console.log(data);
 
     const getTotalItems = (items: CartItemType[]) => 
       items.reduce((ack: number, item) => ack + item.amount, 0); 
@@ -110,7 +109,6 @@ const App = () => {
   }
   
   const handleUpdate = (editProduct: any) => {
-    console.log(editProduct)
     axios
       .put('https://backcap.herokuapp.com/api/products/' + editProduct.id, editProduct)
       .then((response) => {

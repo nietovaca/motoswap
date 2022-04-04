@@ -32,8 +32,9 @@ const Item: React.FC<Props> = ({ item, handleAddToCart }) => {
     return (
         <>
         <Wrapper>
-            {item.primary_image?  <img src={item.primary_image}  alt= {item.title}/>
-            :  <img src={item.imgURL}  alt= {item.title}/>}
+            {item.primary_image?  
+            <img src={item.primary_image}  alt= {item.title} className='mainImg'/>
+            :  <img src='../img/motogirl.png'  alt= {item.title}/>}
             <div>
                 <h3>{item.title}</h3>
                 <h3>${item.price}</h3>
@@ -47,6 +48,9 @@ const Item: React.FC<Props> = ({ item, handleAddToCart }) => {
                     <DialogTitle>{item.title} <br/> ${item.price}</DialogTitle>
                     <DialogContent>   
                         <DialogContentText>
+                        {item.primary_image?  
+                        <> <img src={item.primary_image}  alt= {item.title} className='dialogImg'/> <img src={item.secondary_image} alt={item.title}  className='dialogImg'/></>
+                        : null}
                         </DialogContentText>
                         <DialogContentText>
                             {item.description}
