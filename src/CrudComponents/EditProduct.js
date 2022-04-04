@@ -7,8 +7,6 @@ const Edit = (props) => {
         category: 'New' ||'Used'||'Riding gear'||'Casual wear'||'Luggage',
         title: '', 
         description: '', 
-        primary_image: '', 
-        secondary_image: '',
         imgURL: '', 
         price: 1.99, 
         amount: 1, 
@@ -54,14 +52,6 @@ const Edit = (props) => {
                     <br />
                     <label htmlFor='description'>Description:</label>
                     <input type='text' name='description' defaultValue={item.description} onChange={handleChange}/>
-                    <br />
-                    <br />
-                    <label htmlFor='primary_image'>Image URL (Primary):</label>
-                    <input type='text' name='primary_image' defaultValue={item.primary_image} onChange={handleChange} />
-                    <br />
-                    <br />
-                    <label htmlFor='secondary_image'>Image URL (Secondary):</label>
-                    <input type='text' name='secondary_image' defaultValue={item.secondary_image} onChange={handleChange} />
                     <br />
                     <br />
                     <label htmlFor='price'>Price:</label>
