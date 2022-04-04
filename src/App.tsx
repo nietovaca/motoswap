@@ -18,7 +18,6 @@ import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 
 //Styles 
 import { Wrapper, StyledButton } from './App.styles';
-import CartItem from './CartItem/CartItem';
 
 //Types 
 export type CartItemType = {

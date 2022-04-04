@@ -63,21 +63,3 @@ const Add = (props) => {
 }
 
 export default Add; 
-
-// category = models.ForeignKey(Category, related_name='product', on_delete=models.CASCADE)
-// created_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name='product_creator')
-// author = models.CharField(max_length=255, default='admin')
-// in_stock = models.BooleanField(default=True)
-// is_active = models.BooleanField(default=True)
-// {/* <select value={product.category} htmlFor="category" name='category' onChange={handleChange}>
-//                     <option value='new'>New</option>
-//                     <option value='used'>Used</option>
-//                 </select>     */}
-// <label htmlFor='primary_image'>Image URL:</label>
-{/* <input type='text' name='primary_image' value={product.primary_image} onChange={handleChange} />
-<br />
-<br />
-<label htmlFor='secondary_image'>Image URL:</label>
-<input type='text' name='secondary_image' value={product.secondary_image} onChange={handleChange} />
-<br />
-<br /> */}
