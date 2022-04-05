@@ -12,8 +12,6 @@ import { CardMedia, Typography, CardActions, CardContent } from '@mui/material';
 
 // Types 
 import { CartItemType} from '../App';
-//Styles 
-import { Wrapper } from './Item.styles';
 
 type Props = {
     item: CartItemType; 
