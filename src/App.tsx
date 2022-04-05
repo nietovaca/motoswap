@@ -113,7 +113,11 @@ const App = () => {
     axios
       .put('https://backcap.herokuapp.com/api/products/' + editProduct.id, editProduct)
       .then((response) => {
-        getProducts()
+        getProducts(
+          // data?.map(({items}: any) => {
+          //   return item.id !== editProduct.id ? item: response.data
+          // })
+        )
       })
   }
 
