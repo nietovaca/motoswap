@@ -6,10 +6,10 @@ import Container from '@mui/material/Container';
 
 const Nav = () => {
   return (
-    <AppBar position="static">
-      <Container maxWidth="xl" sx={{bgcolor:'#ffffff'}}>
+    <AppBar position="static" sx={{bgcolor:'#ffffff'}}  >
+      <Container maxWidth="xl" sx={{bgcolor:'#ffffff'}}  className='navBar'>
         <Toolbar disableGutters>
-        <img src="./img/smolestlogo.png" alt="Motoswap Logo" />     
+        <img src="./img/smolestlogo.png" alt="Motoswap Logo"/>     
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
               <Box sx={{ my: 2, color: 'black', display: 'block' }}
               >
