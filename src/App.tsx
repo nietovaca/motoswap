@@ -1,16 +1,17 @@
 import './App.css';
-import { useState } from 'react'
-import { useQuery } from 'react-query'
-import axios from 'axios'
+import { useState } from 'react';
+import { useQuery } from 'react-query';
+import axios from 'axios';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 //Components
-import Nav from './NavBar/Nav'
-import Landing from './Landing/Landing'
+import Nav from './NavBar/Nav';
+import Footer from './Footer/Footer';
+import Landing from './Landing/Landing';
 import Item from './Item/Item';
-import Cart from './Cart/Cart'
-import Add from './CrudComponents/AddProduct'
-import Edit from './CrudComponents/EditProduct'
+import Cart from './Cart/Cart';
+import Add from './CrudComponents/AddProduct';
+import Edit from './CrudComponents/EditProduct';
 import Drawer from '@mui/material/Drawer';
 import LinearProgress from '@mui/material/LinearProgress';
 import Grid from '@mui/material/Grid';
@@ -119,7 +120,6 @@ const App = () => {
   return (
     <Router>
       <Switch>
-
         <Route path='/shop'>
         <Nav />
           <Wrapper className="App">
@@ -175,7 +175,9 @@ const App = () => {
         <Route path='/'>
             <Landing />
         </Route>
+        
       </Switch>
+      <Footer />
     </Router>
   );
 }

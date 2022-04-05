@@ -22,3 +22,29 @@
     background-color: white;
 }
 
+footer h3 {
+    text-align: center;
+  }
+  
+  .engineers-footer-box {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+  }
+  
+  .engineer {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+  }
+  
+  .engineer-links-list {
+    list-style-type: none;
+  }
+  
+  .engineer-link {
+    display: inline;
+    padding-right: 0.5em;
+  }
