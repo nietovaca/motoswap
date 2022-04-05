@@ -3,24 +3,13 @@ import axios from 'axios'
 
 
 const Edit = (props) => {
-    let emptyItem = {
-        category: 'New' ||'Used'||'Riding gear'||'Casual wear'||'Luggage',
-        title: '', 
-        description: '', 
-        primary_image: null,
-        secondary_image: null,
-        imgURL: '', 
-        price: 1, 
-        amount: 1, 
-        id: props.id
-    }
-    const [item, setProduct] = useState(emptyItem);
+    const [item, setProduct] = useState({...props.item});
 
     const handleChange = (event) => {
         setProduct({ ...item, [event.target.name]: event.target.value })
       }
       
-    const handleSubmit = (event) => {
+    const handleSubmit = (event, item) => {
     event.preventDefault()
     props.handleUpdate(item)
     }
